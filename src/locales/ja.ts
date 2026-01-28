@@ -128,5 +128,10 @@ export const ja = {
     viewProfile: 'プロフィールを見る',
     github: 'GitHub',
   },
+  notFound: {
+    title: 'ページが見つかりません',
+    description: 'お探しのページは存在しないか、移動された可能性があります。',
+    backHome: 'ホームに戻る',
+  },
 };
 
