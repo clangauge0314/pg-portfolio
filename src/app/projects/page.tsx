@@ -16,7 +16,7 @@ export default function Projects() {
 
   return (
     <div
-      className={`min-h-screen py-12 transition-colors duration-300 ${
+      className={`min-h-screen pt-24 sm:pt-28 md:pt-32 pb-12 transition-colors duration-300 ${
         isDark ? 'bg-gray-900' : 'bg-gray-50'
       }`}
     >

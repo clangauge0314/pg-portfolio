@@ -32,7 +32,7 @@ export default function ProjectDetail({ params }: PageProps) {
   const Icon = project.icon;
 
   return (
-    <div className={`min-h-screen py-12 transition-colors duration-300 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`min-h-screen pt-24 sm:pt-28 md:pt-32 pb-12 transition-colors duration-300 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/projects"

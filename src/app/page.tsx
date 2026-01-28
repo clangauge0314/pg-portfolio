@@ -24,7 +24,7 @@ export default function Home() {
         <AnimatePresence mode="wait">
           <motion.div
             key={language}
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-20"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
