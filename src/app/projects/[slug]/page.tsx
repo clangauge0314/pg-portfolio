@@ -38,7 +38,7 @@ export default function ProjectDetail({ params }: PageProps) {
   const Icon = project.icon;
 
   return (
-    <div className={`min-h-screen pt-24 sm:pt-28 md:pt-32 pb-12 transition-colors duration-300 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`min-h-screen pt-24 sm:pt-28 md:pt-32 pb-28 transition-colors duration-300 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/projects"
@@ -47,6 +47,7 @@ export default function ProjectDetail({ params }: PageProps) {
           {t.projects.backToList}
         </Link>
 
+        {/* 상단 아이콘 + 제목 영역 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,16 +60,55 @@ export default function ProjectDetail({ params }: PageProps) {
         <h1 className={`text-4xl font-bold mb-4 transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           {project.titleText}
         </h1>
-        <p className={`text-xl mb-8 transition-colors duration-300 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-xl mb-6 transition-colors duration-300 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
           {project.descriptionText}
         </p>
 
+        {/* 액션 버튼 영역 (상단 배치로 네비게이터 겹침 방지 & 접근성 향상) */}
+        <div className={`flex flex-wrap gap-3 pb-8 mb-8 border-b transition-colors duration-300 ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all duration-300 font-medium hover:scale-105 ${isDark ? 'bg-white text-black hover:bg-gray-200' : 'bg-gray-900 text-white hover:bg-gray-800'}`}
+            >
+              <Github className="w-5 h-5" />
+              {t.projects.viewGithub}
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 px-5 py-2.5 border-2 rounded-lg transition-all duration-300 font-medium hover:scale-105 ${isDark ? 'border-white text-white hover:bg-white hover:text-black' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'}`}
+            >
+              <ExternalLink className="w-5 h-5" />
+              {t.projects.viewDemo}
+            </a>
+          )}
+          {project.inflearn && (
+            <a
+              href={project.inflearn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all duration-300 font-medium hover:scale-105 bg-[#00C471] text-white hover:bg-[#00a860] shadow-md shadow-[#00C471]/20"
+            >
+              <GraduationCap className="w-5 h-5" />
+              {inflearnLabel[language]}
+            </a>
+          )}
+        </div>
+
+        {/* 상세 설명 */}
         <div className={`prose prose-lg max-w-none mb-8 ${isDark ? 'prose-invert' : ''}`}>
           <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} leading-relaxed transition-colors duration-300`}>
             {project.longDescriptionText}
           </p>
         </div>
 
+        {/* 주요 기능 */}
         <div className="mb-8">
           <h2 className={`text-2xl font-semibold mb-4 transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             {t.projects.features}
@@ -88,7 +128,8 @@ export default function ProjectDetail({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="mb-8">
+        {/* 사용 기술 */}
+        <div>
           <h2 className={`text-2xl font-semibold mb-4 transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             {t.projects.tech}
           </h2>
@@ -102,42 +143,6 @@ export default function ProjectDetail({ params }: PageProps) {
               </span>
             ))}
           </div>
-        </div>
-
-        <div className="flex flex-wrap gap-4">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 font-medium hover:scale-105 ${isDark ? 'bg-white text-black hover:bg-gray-200' : 'bg-gray-900 text-white hover:bg-gray-800'}`}
-            >
-              <Github className="w-5 h-5" />
-              {t.projects.viewGithub}
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-6 py-3 border-2 rounded-lg transition-all duration-300 font-medium hover:scale-105 ${isDark ? 'border-white text-white hover:bg-white hover:text-black' : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'}`}
-            >
-              <ExternalLink className="w-5 h-5" />
-              {t.projects.viewDemo}
-            </a>
-          )}
-          {project.inflearn && (
-            <a
-              href={project.inflearn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 font-medium hover:scale-105 bg-[#00C471] text-white hover:bg-[#00a860]"
-            >
-              <GraduationCap className="w-5 h-5" />
-              {inflearnLabel[language]}
-            </a>
-          )}
         </div>
       </div>
     </div>
