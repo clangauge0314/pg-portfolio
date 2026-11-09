@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useThemeStore } from '@/store/themeStore';
 import { use } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguageStore } from '@/store/languageStore';
 import { translations } from '@/locales';
@@ -16,6 +16,12 @@ interface PageProps {
     slug: string;
   }>;
 }
+
+const inflearnLabel = {
+  ko: '인프런 강의 보기',
+  ja: 'Inflearn 講座を見る',
+  en: 'View on Inflearn',
+};
 
 export default function ProjectDetail({ params }: PageProps) {
   const { isDark } = useThemeStore();
@@ -98,7 +104,7 @@ export default function ProjectDetail({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {project.github && (
             <a
               href={project.github}
@@ -119,6 +125,17 @@ export default function ProjectDetail({ params }: PageProps) {
             >
               <ExternalLink className="w-5 h-5" />
               {t.projects.viewDemo}
+            </a>
+          )}
+          {project.inflearn && (
+            <a
+              href={project.inflearn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 font-medium hover:scale-105 bg-[#00C471] text-white hover:bg-[#00a860]"
+            >
+              <GraduationCap className="w-5 h-5" />
+              {inflearnLabel[language]}
             </a>
           )}
         </div>
