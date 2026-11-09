@@ -231,7 +231,7 @@ export const projectsData: ProjectData[] = [
     ],
     github: 'https://github.com/clangauge0314/react-electronjs-clock',
     demo: 'https://electron-project-62ba8.web.app/',
-    inflearn: 'https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%BD%ED%8A%B8-gui-%EA%B0%9C%EB%B0%9C-1-elec',
+    inflearn: 'https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-gui-%EA%B0%9C%EB%B0%9C-1-elec',
   },
   {
     id: 'company-website',
