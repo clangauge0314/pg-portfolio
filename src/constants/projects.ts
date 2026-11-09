@@ -1,4 +1,4 @@
-import { Heart, Brain, Vote, Timer, Building2 } from 'lucide-react';
+import { Heart, Brain, Vote, Timer, Building2, Mic } from 'lucide-react';
 import type { Language } from '@/store/languageStore';
 
 type LocalizedText = {
@@ -12,7 +12,8 @@ export type ProjectId =
   | 'titanic-ai'
   | 'vote-community'
   | 'electron-timer'
-  | 'company-website';
+  | 'company-website'
+  | 'voice-to-text';
 
 interface ProjectData {
   id: ProjectId;
@@ -25,6 +26,7 @@ interface ProjectData {
   features: LocalizedText[];
   github?: string;
   demo?: string;
+  inflearn?: string;
 }
 
 export const projectsData: ProjectData[] = [
@@ -126,7 +128,8 @@ export const projectsData: ProjectData[] = [
       },
     ],
     github: 'https://github.com/clangauge0314/titanic-project',
-    demo: 'https://survivethetitanic.site',
+    demo: 'https://survive-the-titanic.vercel.app/',
+    inflearn: 'https://www.inflearn.com/course/%EB%82%B4%EA%B0%80-%ED%83%80%EC%9D%B4%ED%83%80%EB%8B%89%EC%97%90-%ED%83%94%EC%97%88%EB%8B%A4%EB%A9%B4-pytorc',
   },
   {
     id: 'vote-community',
@@ -176,7 +179,8 @@ export const projectsData: ProjectData[] = [
       },
     ],
     github: 'https://github.com/clangauge0314',
-    demo: 'https://talkandvote-demo.site',
+    demo: 'https://talkandvote-d721d.web.app/',
+    inflearn: 'https://www.inflearn.com/course/react-fastapi-vote-community',
   },
   {
     id: 'electron-timer',
@@ -226,7 +230,8 @@ export const projectsData: ProjectData[] = [
       },
     ],
     github: 'https://github.com/clangauge0314/react-electronjs-clock',
-    demo: 'https://react-electronjs-clock.web.app',
+    demo: 'https://electron-project-62ba8.web.app/',
+    inflearn: 'https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%BD%ED%8A%B8-gui-%EA%B0%9C%EB%B0%9C-1-elec',
   },
   {
     id: 'company-website',
@@ -276,7 +281,59 @@ export const projectsData: ProjectData[] = [
       },
     ],
     github: 'https://github.com/clangauge0314/company_website',
-    demo: 'https://my-company.site',
+    demo: 'https://my-company-cdfa1.web.app/',
+    inflearn: 'https://www.inflearn.com/course/react-nodejs-%ED%9A%8C%EC%82%AC%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%92%80%EC%8A%A4%ED%83%9D',
+  },
+  {
+    id: 'voice-to-text',
+    icon: Mic,
+    color: 'from-violet-500 to-fuchsia-500',
+    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'WhisperX', 'Gemini', 'PortOne', 'Cloudinary'],
+    title: {
+      ko: 'Voice to Text 풀스택 SaaS',
+      ja: 'Voice to Text フルスタックSaaS',
+      en: 'Voice to Text Full-stack SaaS',
+    },
+    description: {
+      ko: 'WhisperX와 Gemini를 결합한 음성 전사 및 AI 노트 생성 MERN 풀스택 SaaS',
+      ja: 'WhisperXとGeminiを統合した音声文字起こし・AIノート生成MERNフルスタックSaaS',
+      en: 'MERN full-stack SaaS for speech-to-text transcription and AI note generation powered by WhisperX and Gemini.',
+    },
+    longDescription: {
+      ko: '미디어 업로드부터 WhisperX 기반 음성 전사, 오디오 웨이브폼 연동 편집기, Gemini 기반 AI 단어 노트 생성, PortOne 크레딧 결제 및 관리자 대시보드까지 하나의 제품 플로우로 완성한 MERN 풀스택 SaaS 프로젝트입니다. 상태 기반 전사 파이프라인과 역할 분리 인증(JWT·IP 화이트리스트) 등 프로덕션 지향 아키텍처를 설계하고 Firebase와 Render를 통해 실제 배포까지 구현했습니다.',
+      ja: 'メディアアップロードからWhisperXベースの音声文字起こし、波形連動エディタ、Geminiを活用したAI単語ノート生成、PortOneクレジット決済、管理者ダッシュボードまでを一貫したプロダクトフローとして構築したMERNフルスタックSaaSです。状態ベースの文字起こしパイプラインやロール分離認証（JWT・IPホワイトリスト）など、本番環境を見据えたアーキテクチャを設計し、FirebaseとRenderへデプロイしました。',
+      en: 'A production-oriented MERN full-stack SaaS covering the entire product lifecycle: media upload via Cloudinary, speech-to-text transcription with a custom WhisperX FastAPI server, waveform-synced memo editing, AI vocabulary note generation with Gemini, credit-based monetization via PortOne, and an admin dashboard. Deployed using Firebase and Render with role-separated JWT authentication.',
+    },
+    features: [
+      {
+        ko: 'WhisperX 기반 AI STT 서버 및 상태 기반 전사 파이프라인',
+        ja: 'WhisperXベースのAI STTサーバーと状態管理文字起こしパイプライン',
+        en: 'WhisperX AI STT server and state-driven transcription pipeline',
+      },
+      {
+        ko: '오디오 웨이브폼 재생 연동 메모 편집기 및 세그먼트 동기화',
+        ja: 'オーディオ波形再生と連動したメモエディタおよびセグメント同期',
+        en: 'Waveform-synced memo editor with real-time segment highlighting',
+      },
+      {
+        ko: 'Gemini API 연동 맥락 기반 AI 단어 노트 생성',
+        ja: 'Gemini API連携による文脈ベースのAI単語ノート生成',
+        en: 'Context-aware AI vocabulary note generation with Gemini API',
+      },
+      {
+        ko: 'PortOne 결제 연동 및 크레딧 충전·차감 시스템 (멱등성 보장)',
+        ja: 'PortOne決済連携とクレジットチャージ・消費システム（べき等性保証）',
+        en: 'PortOne payment integration with idempotent credit billing system',
+      },
+      {
+        ko: '역할 분리 인증(Admin JWT·IP 화이트리스트) 기반 관리자 대시보드',
+        ja: 'ロール分離認証（Admin JWT・IPホワイトリスト）ベースの管理者ダッシュボード',
+        en: 'Admin dashboard secured with role-separated JWT and IP whitelisting',
+      },
+    ],
+    github: 'https://github.com/clangauge0314/voice-to-text-practice',
+    demo: 'https://voice-to-text-b14c0.web.app/',
+    inflearn: 'https://www.inflearn.com/course/full-stack-voice-tex',
   },
 ];
 
@@ -302,5 +359,3 @@ export function getProjectDetail(id: ProjectId, language: Language) {
     featuresText: project.features.map((f) => f[language]),
   };
 }
-
-
