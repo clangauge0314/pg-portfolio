@@ -111,7 +111,7 @@ export const ja = {
       {
         name: 'TOEIC LC & RC Test 695点 取得',
         issuer: 'ETS',
-        date: '2023.07',
+        date: '2023.11',
       },
       {
         name: '日本語能力試験 N1 合格',
