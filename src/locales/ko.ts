@@ -111,7 +111,7 @@ export const ko = {
       {
         name: 'TOEIC LC & RC 시험 695점 취득',
         issuer: 'ETS',
-        date: '2023.07',
+        date: '2023.11',
       },
       {
         name: '일본어능력시험 N1 합격',
